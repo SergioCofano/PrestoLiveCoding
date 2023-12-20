@@ -1,11 +1,29 @@
 
+:root {
+  --red: #8C271E;
+  --lightcyan: #E7F5F7;
+  --black: #1C2726;
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+body {
+  background-color: var(--lightcyan) ;
+}
+
 .button-aggiungi {
-  background: #FF4742;
-  border: 1px solid #FF4742;
+  background: var(--red);
+  border: 0px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: var(--lightcyan);
   cursor: pointer;
   display: inline-block;
   font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
@@ -25,7 +43,6 @@
   list-style-type: none;
 }
 
-
 .button-aggiungi:hover, 
 .button-aggiungi:active {
   background-color: initial;
@@ -37,17 +54,16 @@
   opacity: .5;
 }
 
-.nav_custom{
-
+.navbar-transition {
+  transition: 0.5s;
 }
-   
 
 .div_custom{
-    height: 2000px;
+  height: 2000px;
 }
 
 .container-header{
-    padding-top: 150px;
+  padding-top: 150px;
 }
 
 .button-mostra {
@@ -84,4 +100,13 @@
 
 .button-mostra:active {
   opacity: .5;
+}
+
+.margin-custom {
+  margin-top: 200px;
+}
+
+.margin-heart {
+  margin-top: 20px !important;
+  margin-right: 100px !important;
 }
