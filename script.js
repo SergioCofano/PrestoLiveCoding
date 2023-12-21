@@ -44,10 +44,12 @@ counting(200,countingVisitatori,10)
 
 
 let prodotti = [
-    {'nome':'macchina', 'descrizione':'ibrida', 'prezzo':'10000', 'immagine':'https://picsum.photos/200/200'},
-    {'nome':'fotocamera', 'descrizione':'full-frame', 'prezzo':'500', 'immagine':'https://picsum.photos/200/200'},
-    {'nome':'snowborad', 'descrizione':'freestyle', 'prezzo':'200', 'immagine':'https://picsum.photos/200/200'},        {'nome':'bici', 'descrizione':'corsa', 'prezzo':'700', 'immagine':'https://picsum.photos/200/200'},
-    {'nome':'snowborad', 'descrizione':'freestyle', 'prezzo':'200', 'immagine':'https://picsum.photos/200/200'},        {'nome':'scooter', 'descrizione':'city', 'prezzo':'2000', 'immagine':'https://picsum.photos/200/200'},
+    {nome:'macchina', descrizione:'ibrida', prezzo:'10000', immagine:'https://picsum.photos/200/200'},
+    {nome:'fotocamera', descrizione:'full-frame', prezzo:'500', immagine:'https://picsum.photos/200/200'},
+    {nome:'snowborad', descrizione:'freestyle', prezzo:'200', immagine:'https://picsum.photos/200/200'},
+    {nome:'bici', descrizione:'corsa', prezzo:'700', immagine:'https://picsum.photos/200/200'},
+    {nome:'snowborad', descrizione:'freestyle', prezzo:'200', immagine:'https://picsum.photos/200/200'},
+    {nome:'scooter', descrizione:'city', prezzo:'2000', immagine:'https://picsum.photos/200/200'},
 ]
 
 
@@ -65,11 +67,9 @@ prodotti.forEach((singoloProdotto, index) => {
             <p>${singoloProdotto.nome}</p>
             <p>${singoloProdotto.descrizione}</p>
             </div>
-            <p class="ms-auto mt-auto px-3">${singoloProdotto.prezzo}</p>  
+            <p class="ms-auto mt-auto px-3">${singoloProdotto.prezzo}</p>
         </div>
         `
         ultimiAnnunci.appendChild(newDiv);
     }
 });
-
-
