@@ -3,9 +3,54 @@ const navbar = document.querySelector('.navbar')
 const navLinks = document.querySelectorAll('.nav-link')
 const buttonAggiungi = document.querySelector('.button-aggiungi')
 const countingVisitatori = document.querySelector('#countingVisitatori')
+const countingPokemon = document.querySelector('#countingPokemon')
+const countingPalestre = document.querySelector('#countingPalestre')
 const ultimiAnnunci = document.querySelector('#ultimiAnnunci')
 
 
+let prodotti = [
+    {"id": "#001",
+        "name": "Bulbasaur",
+        "type": ["Erba", "Veleno"],
+        "price": "120.12",
+        "url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png"
+      },
+      {
+        "id": "#002",
+        "name": "Ivysaur",
+        "type": ["Erba", "Veleno"],
+        "price": "150.50",
+        "url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png"
+      },
+      {
+        "id": "#003",
+        "name": "Venusaur",
+        "type": ["Erba", "Veleno"],
+        "price": "200.25",
+        "url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png"
+      },
+      {
+        "id": "#004",
+        "name": "Charmander",
+        "type": ["Fuoco"],
+        "price": "80.75",
+        "url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png"
+      },
+      {
+        "id": "#005",
+        "name": "Charmeleon",
+        "type": ["Fuoco"],
+        "price": "120.00",
+        "url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png"
+      },
+      {
+        "id": "#006",
+        "name": "Charizard",
+        "type": ["Fuoco", "Volante"],
+        "price": "250.50",
+        "url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png"
+},
+]
 
 // scroll navbar
 window.addEventListener('scroll',() => {
@@ -28,6 +73,52 @@ window.addEventListener('scroll',() => {
 });
 
 
+// creazione card ultimi annunci
+prodotti.forEach((singoloProdotto, index) => {
+    if ( index >= prodotti.length - 3){
+
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('col-12', 'col-md-4');
+        newDiv.innerHTML = `
+        <div class="border card position-relative" data-aos="flip-up" data-aos-duration="1000">
+        <div class="icon-container">
+        <i class="fa-regular fa-heart position-absolute margin-heart fs-3"></i>
+        </div>
+        <img src='${singoloProdotto.url}' alt="" class="img-fluid mb-3 card-img">
+        <div class="px-3 pt-3">
+        <p>${singoloProdotto.id}</p>
+        <p>${singoloProdotto.name}</p>
+        <p>${singoloProdotto.type}</p>
+        </div>
+        <p class="ms-auto mt-auto px-3">${singoloProdotto.price}</p>
+        </div>
+        `
+        ultimiAnnunci.appendChild(newDiv);
+    }
+});
+
+/*CLICK CUORICINI CARTE/IMMAGINI*/
+
+const iconHearts = document.querySelectorAll('.fa-heart');
+const cardImgs = document.querySelectorAll('.card-img');
+
+iconHearts.forEach((icon) => {
+    icon.addEventListener('click' , () => {
+        icon.classList.toggle('fa-solid');
+        icon.classList.toggle('text-danger');
+    })
+});
+
+cardImgs.forEach((cardImg, i) => {
+    cardImg.addEventListener('dblclick', () => {
+        iconHearts[i].classList.add('fa-solid');
+        iconHearts[i].classList.add('text-danger');
+    })
+    console.log(cardImg);
+});
+
+/*COUNTING*/
+
 function counting(maxN, element, f ) {
     let counter = 0
     let Interval = setInterval(() => {
@@ -40,36 +131,10 @@ function counting(maxN, element, f ) {
     }, f)
 }
 
-counting(200,countingVisitatori,10)
+counting(1800,countingVisitatori,13)
+counting(3492,countingPokemon,0)
+counting(25,countingPalestre,300)
 
 
-let prodotti = [
-    {nome:'macchina', descrizione:'ibrida', prezzo:'10000', immagine:'https://picsum.photos/200/200'},
-    {nome:'fotocamera', descrizione:'full-frame', prezzo:'500', immagine:'https://picsum.photos/200/200'},
-    {nome:'snowborad', descrizione:'freestyle', prezzo:'200', immagine:'https://picsum.photos/200/200'},
-    {nome:'bici', descrizione:'corsa', prezzo:'700', immagine:'https://picsum.photos/200/200'},
-    {nome:'snowborad', descrizione:'freestyle', prezzo:'200', immagine:'https://picsum.photos/200/200'},
-    {nome:'scooter', descrizione:'city', prezzo:'2000', immagine:'https://picsum.photos/200/200'},
-]
 
-
-// creazione card ultimi annuncci
-prodotti.forEach((singoloProdotto, index) => {
-    if ( index >= prodotti.length - 3){
-
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('col-12', 'col-md-4');
-        newDiv.innerHTML = `
-        <div class="border card position-relative">
-            <img src='${singoloProdotto.immagine}' alt="">
-            <i class="fa-solid fa-heart position-absolute margin-heart text-white"></i>
-            <div class="px-3 pt-3">
-            <p>${singoloProdotto.nome}</p>
-            <p>${singoloProdotto.descrizione}</p>
-            </div>
-            <p class="ms-auto mt-auto px-3">${singoloProdotto.prezzo}</p>
-        </div>
-        `
-        ultimiAnnunci.appendChild(newDiv);
-    }
-});
+AOS.init();
