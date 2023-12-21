@@ -80,17 +80,17 @@ prodotti.forEach((singoloProdotto, index) => {
         let newDiv = document.createElement('div');
         newDiv.classList.add('col-12', 'col-md-4');
         newDiv.innerHTML = `
-        <div class="border card position-relative" data-aos="flip-up" data-aos-duration="1000">
+        <div class="carta-pokemon border card position-relative" data-aos="flip-up" data-aos-duration="1000">
         <div class="icon-container">
         <i class="fa-regular fa-heart position-absolute margin-heart fs-3"></i>
         </div>
         <img src='${singoloProdotto.url}' alt="" class="img-fluid mb-3 card-img">
         <div class="px-3 pt-3">
-        <p>${singoloProdotto.id}</p>
-        <p>${singoloProdotto.name}</p>
-        <p>${singoloProdotto.type}</p>
+        <p><b>${singoloProdotto.id}</b></p>
+        <p><h4>${singoloProdotto.name}</h4></p>
+        <p><h5>${singoloProdotto.type}</h5></p>
         </div>
-        <p class="ms-auto mt-auto px-3">${singoloProdotto.price}</p>
+        <p class="ms-auto mt-auto px-3 fs-4"><i>¥${singoloProdotto.price}</i></p>
         </div>
         `
         ultimiAnnunci.appendChild(newDiv);
