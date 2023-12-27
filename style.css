@@ -1,4 +1,4 @@
-
+/*GENERICI*/
 :root {
   --red: #8C271E;
   --lightcyan: #E7F5F7;
@@ -17,6 +17,11 @@ body {
   background-color: var(--lightcyan) ;
 }
 
+.margin-custom {
+  margin-top: 100px;
+}
+
+/*NAVBAR E HEADER*/
 .button-aggiungi {
   background: var(--red);
   border: 0px;
@@ -66,16 +71,6 @@ body {
   padding-top: 150px;
 }
 
-.header-background {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.5;
-  box-shadow: rgb(255, 0, 0) 0px 5px, rgba(255, 0, 0, 0.501) 0px 10px, rgba(255, 0, 0, 0.282) 0px 15px, rgba(255, 0, 0, 0.173) 0px 20px, rgba(255, 0, 0, 0.041) 0px 25px;
-}
-
-
-
-
 
 .button-mostra {
   background: #FF4742;
@@ -113,10 +108,21 @@ body {
   opacity: .5;
 }
 
-.margin-custom {
-  margin-top: 100px;
+/*ANIMAZIONE POKEBALL*/
+.pokeball {
+  animation: ruota 50s infinite linear;
 }
 
+@keyframes ruota {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/*CARTE POKEMON*/
 .carta-pokemon {
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
@@ -142,3 +148,54 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+
+/*RECENSIONI*/
+.review-card {
+  width: 600px;
+  height: 430px;
+  border: 5px solid #b60c0c;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.star-container > i {
+  font-size: larger;
+}
+
+
+/*SWIPER*/
+    .swiper {
+      width: 600px;
+      height: 430px;
+    }
+
+    .swiper-slide:nth-child(1n) {
+      background-color: #fafafa;
+    }
+
+    .swiper-slide:nth-child(2n) {
+      background-color: #fafafa;
+    }
+
+    .swiper-slide:nth-child(3n) {
+      background-color: #fafafa;
+    }
+
+    .swiper-slide:nth-child(4n) {
+      background-color: #fafafa;
+    }
+
+    .swiper-slide:nth-child(5n) {
+
+    }
+
+    .swiper-slide:nth-child(6n) {
+
+    }
+
+    .swiper-slide:nth-child(7n) {
+
+    }

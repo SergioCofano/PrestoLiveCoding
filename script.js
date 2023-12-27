@@ -52,7 +52,7 @@ let prodotti = [
 },
 ]
 
-// scroll navbar
+//SCROLL NAVBAR
 window.addEventListener('scroll',() => {
     if (window.scrollY > 120) {
         navbar.classList.add('navbar-transition')
@@ -73,7 +73,7 @@ window.addEventListener('scroll',() => {
 });
 
 
-// creazione card ultimi annunci
+//CREAZIONE CARD ULTIMI ANNUNCI
 prodotti.forEach((singoloProdotto, index) => {
     if ( index >= prodotti.length - 3){
 
@@ -97,8 +97,7 @@ prodotti.forEach((singoloProdotto, index) => {
     }
 });
 
-/*CLICK CUORICINI CARTE/IMMAGINI*/
-
+//CLICK CUORICINI CARTE E IMMAGINI
 const iconHearts = document.querySelectorAll('.fa-heart');
 const cardImgs = document.querySelectorAll('.card-img');
 
@@ -117,8 +116,7 @@ cardImgs.forEach((cardImg, i) => {
     console.log(cardImg);
 });
 
-/*COUNTING*/
-
+//COUNTER
 function counting(maxN, element, f ) {
     let counter = 0
     let Interval = setInterval(() => {
@@ -135,6 +133,63 @@ counting(1800,countingVisitatori,13)
 counting(3492,countingPokemon,0)
 counting(25,countingPalestre,300)
 
+
+//REVIEWS
+const reviewsWrapper = document.querySelector('#reviewsWrapper');
+
+let reviews = [
+    {'name' : 'Rosso', 'review': 'Fantastico sito! Ottimo per i Pokéfanatici! ', 'rank': 5, 'url': 'media/Rosso.png'},
+    {'name' : 'Blu', 'review': 'Scambiate con stile! Centro Pokemon top-notch. Servizio rapido e assistenza impeccabile', 'rank': 4.5, 'url': 'media/Blu.png'},
+    {'name' : 'Viola', 'review': 'Centro scambi Pokemon all avanguardia. Efficiente e pieno di entusiasmo Pokémon. Finalmente ho potuto ottenere il Muk che ho sempre desiderato', 'rank': 5, 'url': 'media/Viola.png'},
+    {'name' : 'Nero', 'review': 'Un rifugio per gli Allenatori! Scambi fluidi e tanta passione Pokémon in questo centro. Nel giro di pochi giorni arriva tutto a casa', 'rank': 4, 'url': 'media/Nero.png'},
+]
+
+reviews.forEach((review) => {
+    let div = document.createElement('div');
+    div.classList.add('swiper-slide')
+    div.innerHTML = `
+                <div class="review-card">
+                 <h4 class="text-center fw-bolder">${review.name}</h4>
+                 <div class="d-flex justify-content-center">
+                     <img class="my-2" src="${review.url}" alt="">
+                    </div>
+                    <p class="my-2"><i>"${review.review}"</i></p>
+                <div class="star-container d-flex justify-content-center mt-4">
+                    ${generateStars(review.rank)}
+                </div>
+             </div>
+    `
+
+    reviewsWrapper.appendChild(div)
+})
+
+let starContainer = document.querySelectorAll('.star-container')
+
+function generateStars(rank){
+    let result = ''
+
+    for (let i = 1; i <= 5; i++) {
+        if(rank == 0.5){
+            result += '<i class="fa-regular fa-star-half-stroke"></i>'
+            rank = 0
+        } else if(rank > 0){
+            result += '<i class="fa-solid fa-star"></i>'
+            rank--
+        } else {
+            result += '<i class="fa-regular fa-star"></i>'
+        }
+    }
+    return result
+}
+
+
+
+
+//SWIPER
+let swiper = new Swiper(".mySwiper", {
+      effect: "cards",
+      grabCursor: true,
+    });
 
 
 AOS.init();
