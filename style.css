@@ -3,6 +3,8 @@
   --red: #8C271E;
   --lightcyan: #E7F5F7;
   --black: #1C2726;
+  --offwhite: #fbfbfb;
+  --gainsboro: #c7c7c7;
 }
 
 .text-red {
@@ -14,7 +16,7 @@
 }
 
 body {
-  background-color: var(--lightcyan) ;
+  background-color: var(--offwhite) ;
 }
 
 .margin-custom {
@@ -78,7 +80,7 @@ body {
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: var(--offwhite);
   cursor: pointer;
   display: inline-block;
   font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
@@ -134,7 +136,7 @@ body {
 
 .icon-container > i {
   cursor: pointer;
-  color: #e1e1e1;
+  color: var(--gainsboro);
   font-size: 25px;
 }
 
@@ -173,19 +175,19 @@ body {
     }
 
     .swiper-slide:nth-child(1n) {
-      background-color: #fafafa;
+      background-color: var(--offwhite);
     }
 
     .swiper-slide:nth-child(2n) {
-      background-color: #fafafa;
+      background-color: var(--offwhite);
     }
 
     .swiper-slide:nth-child(3n) {
-      background-color: #fafafa;
+      background-color: var(--offwhite);
     }
 
     .swiper-slide:nth-child(4n) {
-      background-color: #fafafa;
+      background-color: var(--offwhite);
     }
 
     .swiper-slide:nth-child(5n) {
